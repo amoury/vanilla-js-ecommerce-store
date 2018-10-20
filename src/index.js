@@ -1,6 +1,31 @@
 import style from './main.css';
 import Barba from 'barba.js';
 import './scripts/helper';
+import Product from './scripts/classes/product';
+import { products } from './product-data';
+import { ProductDataService } from './scripts/classes/product-data-service';
+
+
+let dataService = new ProductDataService();
+dataService.loadData(products);
+
+for (let product of dataService.products) console.log(product.name);
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Barba.Pjax.start();
 
@@ -20,6 +45,8 @@ qs("#header__menu-btn").addEventListener('click', () => {
 qs(".btn-close").addEventListener('click', () => {
   qs(".header__sidedrawer").classList.remove('open');
 })
+
+
 
 
 
